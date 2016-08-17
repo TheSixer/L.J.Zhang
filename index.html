@@ -255,6 +255,182 @@
             
               
                 
+                <a class="post-title-link" href="/2016/08/17/转-你应该知道的jQuery技巧/" itemprop="url">
+                  (转)你应该知道的jQuery技巧
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-08-17T11:57:03+08:00" content="2016-08-17">
+              2016-08-17
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/jQuery/" itemprop="url" rel="index">
+                    <span itemprop="name">jQuery</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/08/17/转-你应该知道的jQuery技巧/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/17/转-你应该知道的jQuery技巧/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>&#x5E2E;&#x52A9;&#x63D0;&#x9AD8;&#x4F60;jQuery&#x5E94;&#x7528;&#x7684;&#x7B80;&#x5355;&#x5C0F;&#x6280;&#x5DE7;&#x3002;</p>
+<p>1.&#x56DE;&#x5230;&#x9876;&#x90E8;&#x6309;&#x94AE;<br>2.&#x56FE;&#x7247;&#x9884;&#x52A0;&#x8F7D;<br>3.&#x5224;&#x65AD;&#x56FE;&#x7247;&#x662F;&#x5426;&#x52A0;&#x8F7D;&#x5B8C;<br>4.&#x81EA;&#x52A8;&#x4FEE;&#x8865;&#x7834;&#x635F;&#x56FE;&#x50CF;<br>5.Hover&#x5207;&#x6362;class&#x7C7B;<br>6.&#x7981;&#x7528;&#x8F93;&#x5165;<br>7.&#x505C;&#x6B62;&#x6B63;&#x5728;&#x52A0;&#x8F7D;&#x7684;&#x94FE;&#x63A5;<br>8.toggle fade/slide<br>9.&#x7B80;&#x5355;&#x7684;&#x624B;&#x98CE;&#x7434;<br>10.&#x4F7F;&#x4E24;&#x4E2A;DIV&#x540C;&#x7B49;&#x9AD8;&#x5EA6;<br>11.&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x6807;&#x7B7E;/&#x65B0;&#x7A97;&#x53E3;&#x6253;&#x5F00;&#x5916;&#x90E8;&#x94FE;&#x63A5;<br>12.&#x6839;&#x636E;&#x6587;&#x672C;&#x83B7;&#x53D6;&#x5143;&#x7D20;<br>13.&#x53EF;&#x89C1;&#x53D8;&#x5316;&#x7684;&#x89E6;&#x53D1;<br>14.Ajax&#x8C03;&#x7528;&#x9519;&#x8BEF;&#x5904;&#x7406;<br>15.&#x94FE;&#x5F0F;&#x64CD;&#x4F5C;</p>
+<h3 id="&#x56DE;&#x5230;&#x9876;&#x90E8;&#x6309;&#x94AE;"><a href="#&#x56DE;&#x5230;&#x9876;&#x90E8;&#x6309;&#x94AE;" class="headerlink" title="&#x56DE;&#x5230;&#x9876;&#x90E8;&#x6309;&#x94AE;"></a>&#x56DE;&#x5230;&#x9876;&#x90E8;&#x6309;&#x94AE;</h3><p>&#x5229;&#x7528;jQuery&#x91CC;&#x7684;animate&#x548C;scrollTop&#x65B9;&#x6CD5;&#xFF0C;&#x4F60;&#x4FBF;&#x4E0D;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x63D2;&#x4EF6;&#x521B;&#x5EFA;&#x7B80;&#x5355;&#x7684;&#x6EDA;&#x52A8;&#x5230;&#x9876;&#x90E8;&#x52A8;&#x753B;&#x3002;</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">// Back to top</div><div class="line">$(<span class="string">&apos;.top&apos;</span>).click(<span class="keyword">function</span> (e) {</div><div class="line">  e.preventDefault();</div><div class="line">  $(<span class="string">&apos;html, body&apos;</span>).animate({scrollTop: 0}, 800);</div><div class="line">});</div><div class="line">&lt;!-- Create an anchor tag --&gt;</div><div class="line">&lt;a class=<span class="string">&quot;top&quot;</span> href=<span class="string">&quot;#&quot;</span>&gt;Back to top&lt;/a&gt;</div></pre></td></tr></table></figure>
+<p>&#x901A;&#x8FC7;scrollTop&#x7684;&#x503C;&#x6765;&#x6539;&#x53D8;&#x4F60;&#x60F3;&#x8981;&#x6EDA;&#x52A8;&#x5230;&#x7684;&#x4F4D;&#x7F6E;&#x3002;&#x5176;&#x5B9E;&#x4F60;&#x5C31;&#x662F;&#x505A;&#x4E86;&#xFF1A;&#x5728;&#x63A5;&#x4E0B;&#x6765;&#x7684;800&#x6BEB;&#x79D2;&#x4E2D;&#x8BA9;&#x9875;&#x9762;&#x6EDA;&#x52A8;&#xFF0C;&#x76F4;&#x5230;&#x5B83;&#x6EDA;&#x52A8;&#x5230;&#x6587;&#x6863;&#x7684;&#x9876;&#x90E8;&#x3002;</p>
+<p><strong>&#x5907;&#x6CE8;</strong> &#xFF1A;&#x6765;&#x770B;&#x4E00;&#x4E9B;scrollTop&#x7684;&#x8C03;&#x76AE;&#x884C;&#x4E3A; &#x3002;</p>
+<h3 id="&#x56FE;&#x7247;&#x9884;&#x52A0;&#x8F7D;"><a href="#&#x56FE;&#x7247;&#x9884;&#x52A0;&#x8F7D;" class="headerlink" title="&#x56FE;&#x7247;&#x9884;&#x52A0;&#x8F7D;"></a>&#x56FE;&#x7247;&#x9884;&#x52A0;&#x8F7D;</h3><p>&#x5982;&#x679C;&#x4F60;&#x7684;&#x7F51;&#x9875;&#x4F7F;&#x7528;&#x4E86;&#x5F88;&#x591A;&#x9690;&#x85CF;&#x56FE;&#x7247;&#x6587;&#x4EF6;&#xFF08;&#x4F8B;&#x5982;&#xFF1A;&#x9F20;&#x6807;&#x60AC;&#x505C;&#x5C55;&#x793A;&#x7684;&#x56FE;&#x7247;&#xFF09;&#xFF0C;&#x90A3;&#x4E48;&#x56FE;&#x7247;&#x7684;&#x9884;&#x52A0;&#x8F7D;&#x662F;&#x6709;&#x610F;&#x4E49;&#x7684;&#xFF1A;</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$.preloadImages = <span class="function"><span class="title">function</span></span> () {</div><div class="line">  <span class="keyword">for</span> (var i = 0; i &lt; arguments.length; i++) {</div><div class="line">    $(<span class="string">&apos;&lt;img&gt;&apos;</span>).attr(<span class="string">&apos;src&apos;</span>, arguments[i]);</div><div class="line">  }</div><div class="line">};</div><div class="line">$.preloadImages(<span class="string">&apos;img/hover-on.png&apos;</span>, <span class="string">&apos;img/hover-off.png&apos;</span>);</div></pre></td></tr></table></figure>
+<h3 id="&#x5224;&#x65AD;&#x56FE;&#x7247;&#x662F;&#x5426;&#x52A0;&#x8F7D;&#x5B8C;"><a href="#&#x5224;&#x65AD;&#x56FE;&#x7247;&#x662F;&#x5426;&#x52A0;&#x8F7D;&#x5B8C;" class="headerlink" title="&#x5224;&#x65AD;&#x56FE;&#x7247;&#x662F;&#x5426;&#x52A0;&#x8F7D;&#x5B8C;"></a>&#x5224;&#x65AD;&#x56FE;&#x7247;&#x662F;&#x5426;&#x52A0;&#x8F7D;&#x5B8C;</h3><p>&#x6709;&#x65F6;&#x5019;&#x4F60;&#x53EF;&#x80FD;&#x9700;&#x8981;&#x68C0;&#x67E5;&#x56FE;&#x50CF;&#x662F;&#x5426;&#x5DF2;&#x7ECF;&#x52A0;&#x8F7D;&#x5B8C;&#x6210;&#xFF0C;&#x4EE5;&#x4FBF;&#x4E8E;&#x53EF;&#x4EE5;&#x7EE7;&#x7EED;&#x6267;&#x884C;&#x76F8;&#x5E94;&#x7684;js&#x4EE3;&#x7801;&#xFF1A;</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">&apos;img&apos;</span>).load(<span class="function"><span class="title">function</span></span> () {</div><div class="line">  console.log(<span class="string">&apos;image load successful&apos;</span>);</div><div class="line">});</div></pre></td></tr></table></figure>
+<p>&#x4F60;&#x8FD8;&#x53EF;&#x4EE5;&#x68C0;&#x67E5;&#x4E00;&#x4E2A;&#x7279;&#x5B9A;&#x7684;&#x56FE;&#x7247;&#x662F;&#x5426;&#x52A0;&#x8F7D;&#x5B8C;&#x5E76;&#x4E14;&#x88AB;&#x5E26;&#x6709;Id&#x6216;&#x8005;class&#x7684;img&#x6807;&#x7B7E;&#x4EE3;&#x66FF;&#x3002;</p>
+<h3 id="&#x81EA;&#x52A8;&#x4FEE;&#x8865;&#x7834;&#x635F;&#x56FE;&#x50CF;"><a href="#&#x81EA;&#x52A8;&#x4FEE;&#x8865;&#x7834;&#x635F;&#x56FE;&#x50CF;" class="headerlink" title="&#x81EA;&#x52A8;&#x4FEE;&#x8865;&#x7834;&#x635F;&#x56FE;&#x50CF;"></a>&#x81EA;&#x52A8;&#x4FEE;&#x8865;&#x7834;&#x635F;&#x56FE;&#x50CF;</h3><p>&#x5982;&#x679C;&#x4F60;&#x78B0;&#x5DE7;&#x53D1;&#x73B0;&#x5728;&#x4F60;&#x7684;&#x7F51;&#x7AD9;&#x4E0A;&#x53D1;&#x73B0;&#x7834;&#x635F;&#x7684;&#x56FE;&#x50CF;&#x94FE;&#x63A5;&#xFF0C;&#x4E00;&#x4E2A;&#x4E2A;&#x53BB;&#x66FF;&#x4EE3;&#x4ED6;&#x4EEC;&#x662F;&#x75DB;&#x82E6;&#x7684;&#x3002;&#x8FD9;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x4EE3;&#x7801;&#x53EF;&#x4EE5;&#x8282;&#x7701;&#x5F88;&#x591A;&#x7684;&#x9EBB;&#x70E6;&#xFF1A;</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">&apos;img&apos;</span>).on(<span class="string">&apos;error&apos;</span>, <span class="function"><span class="title">function</span></span> () {</div><div class="line">  <span class="keyword">if</span>(!$(this).hasClass(<span class="string">&apos;broken-image&apos;</span>)) {</div><div class="line">    $(this).prop(<span class="string">&apos;src&apos;</span>, <span class="string">&apos;img/broken.png&apos;</span>).addClass(<span class="string">&apos;broken-image&apos;</span>);</div><div class="line">  }</div><div class="line">});</div></pre></td></tr></table></figure>
+<p>&#x5373;&#x4F7F;&#x4F60;&#x6CA1;&#x6709;&#x4EFB;&#x4F55;&#x65AD;&#x5F00;&#x7684;&#x94FE;&#x63A5;&#xFF0C;&#x52A0;&#x5165;&#x8FD9;&#x4EE3;&#x7801;&#x4E5F;&#x4E0D;&#x4F1A;&#x6709;&#x4EFB;&#x4F55;&#x5F71;&#x54CD;&#x3002;</p>
+<h3 id="Hover&#x5207;&#x6362;class&#x7C7B;"><a href="#Hover&#x5207;&#x6362;class&#x7C7B;" class="headerlink" title="Hover&#x5207;&#x6362;class&#x7C7B;"></a>Hover&#x5207;&#x6362;class&#x7C7B;</h3><p>&#x6BD4;&#x65B9;&#x8BF4;&#xFF0C;&#x5F53;&#x7528;&#x6237;&#x5C06;&#x9F20;&#x6807;&#x60AC;&#x505C;&#x5728;&#x4F60;&#x9875;&#x9762;&#x4E0A;&#x7684;&#x5143;&#x7D20;&#x65F6;&#xFF0C;&#x4F60;&#x60F3;&#x6539;&#x53D8;&#x5176;&#x89C6;&#x89C9;&#x6548;&#x679C;&#x3002;&#x5F53;&#x7528;&#x6237;&#x9F20;&#x6807;&#x60AC;&#x505C;&#x5728;&#x5143;&#x7D20;&#x4E0A;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x5728;&#x8BE5;&#x5143;&#x7D20;&#x4E0A;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;class&#x7C7B;&#xFF0C;&#x5F53;&#x9F20;&#x6807;&#x505C;&#x6B62;&#x60AC;&#x505C;&#x4E8B;&#x4EF6;&#x65F6;&#x79FB;&#x9664;&#x6B64;class&#x7C7B;&#xFF1A;</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">&apos;.btn&apos;</span>).hover(<span class="function"><span class="title">function</span></span> () {</div><div class="line">  $(this).addClass(<span class="string">&apos;hover&apos;</span>);</div><div class="line">}, <span class="function"><span class="title">function</span></span> () {</div><div class="line">  $(this).removeClass(<span class="string">&apos;hover&apos;</span>);</div><div class="line">});</div></pre></td></tr></table></figure>
+<p>&#x5982;&#x679C;&#x4F60;&#x60F3;&#x8981;&#x4E00;&#x4E2A;&#x66F4;&#x7B80;&#x5355;&#x7684;&#x65B9;&#x5F0F;&#x4F7F;&#x7528;toggleClass&#x65B9;&#x6CD5;&#xFF0C;&#x5219;&#x4EC5;&#x4EC5;&#x9700;&#x8981;&#x6DFB;&#x52A0;&#x5FC5;&#x8981;&#x7684;CSS&#xFF1A;</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">&apos;.btn&apos;</span>).hover(<span class="function"><span class="title">function</span></span> () {</div><div class="line">  $(this).toggleClass(<span class="string">&apos;hover&apos;</span>);</div><div class="line">});</div></pre></td></tr></table></figure>
+<p><strong>&#x5907;&#x6CE8;</strong> &#xFF1A;CSS&#x5728;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#x4F7F;&#x7528;&#x662F;&#x4E00;&#x4E2A;&#x5FEB;&#x901F;&#x7684;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#xFF0C;&#x4F46;&#x8981;&#x77E5;&#x9053;&#x8FD9;&#x70B9;&#x77E5;&#x8BC6;&#x4F9D;&#x65E7;&#x662F;&#x503C;&#x5F97;&#x53BB;&#x4E86;&#x89E3;&#x4E0B;&#x7684;&#x3002;</p>
+<h3 id="&#x7981;&#x7528;&#x8F93;&#x5165;"><a href="#&#x7981;&#x7528;&#x8F93;&#x5165;" class="headerlink" title="&#x7981;&#x7528;&#x8F93;&#x5165;"></a>&#x7981;&#x7528;&#x8F93;&#x5165;</h3><p>&#x6709;&#x65F6;&#x4F60;&#x53EF;&#x80FD;&#x9700;&#x8981;&#x7528;&#x8868;&#x5355;&#x7684;&#x63D0;&#x4EA4;&#x6309;&#x94AE;&#x6216;&#x8005;&#x67D0;&#x4E2A;&#x8F93;&#x5165;&#x6846;&#x76F4;&#x5230;&#x7528;&#x6237;&#x6267;&#x884C;&#x4E86;&#x67D0;&#x4E2A;&#x52A8;&#x4F5C;&#xFF08;&#x6BD4;&#x5982;&#xFF1A;&#x68C0;&#x67E5;&#x201C;&#x6211;&#x5DF2;&#x9605;&#x8BFB;&#x6761;&#x6B3E;&#x201D;&#x590D;&#x9009;&#x6846;&#xFF09;&#x3002;&#x5728;&#x4F60;&#x7684;&#x8F93;&#x5165;&#x6846;&#x4E0A;&#x8BBE;&#x7F6E;disabled&#x5C5E;&#x6027;&#xFF0C;&#x7136;&#x540E;&#x5F53;&#x4F60;&#x9700;&#x8981;&#x7684;&#x65F6;&#x5019;&#x542F;&#x7528;&#x8BE5;&#x5C5E;&#x6027;&#xFF1A;</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">&apos;input[type=&quot;submit&quot;]&apos;</span>).prop(<span class="string">&apos;disabled&apos;</span>, <span class="literal">true</span>);</div></pre></td></tr></table></figure>
+<p>&#x4F60;&#x9700;&#x8981;&#x505A;&#x7684;&#x53EA;&#x662F;&#x9700;&#x8981;&#x5728;&#x8F93;&#x5165;&#x6846;&#x4E0A;&#x518D;&#x6B21;&#x8FD0;&#x884C;prop&#x65B9;&#x6CD5;&#xFF0C;&#x4F46;&#x8BBE;&#x7F6E;&#x7684;&#x88AB;&#x7981;&#x7528;&#x503C;&#x662F;false&#xFF1A;</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">&apos;input[type=&quot;submit&quot;]&apos;</span>).prop(<span class="string">&apos;disabled&apos;</span>, <span class="literal">false</span>);</div></pre></td></tr></table></figure>
+<h3 id="&#x505C;&#x6B62;&#x6B63;&#x5728;&#x52A0;&#x8F7D;&#x7684;&#x94FE;&#x63A5;"><a href="#&#x505C;&#x6B62;&#x6B63;&#x5728;&#x52A0;&#x8F7D;&#x7684;&#x94FE;&#x63A5;" class="headerlink" title="&#x505C;&#x6B62;&#x6B63;&#x5728;&#x52A0;&#x8F7D;&#x7684;&#x94FE;&#x63A5;"></a>&#x505C;&#x6B62;&#x6B63;&#x5728;&#x52A0;&#x8F7D;&#x7684;&#x94FE;&#x63A5;</h3><p>&#x6709;&#x65F6;&#x4F60;&#x4E0D;&#x60F3;&#x94FE;&#x63A5;&#x5230;&#x7279;&#x5B9A;&#x7684;&#x7F51;&#x9875;&#x6216;&#x8005;&#x91CD;&#x65B0;&#x8F7D;&#x5165;&#x9875;&#x9762;&#xFF1B;&#x4F60;&#x53EF;&#x80FD;&#x60F3;&#x8BA9;&#x4ED6;&#x4EEC;&#x505A;&#x4E00;&#x4E9B;&#x5176;&#x4ED6;&#x4E8B;&#x60C5;&#xFF0C;&#x5982;&#x89E6;&#x53D1;&#x4E00;&#x4E9B;&#x5176;&#x4ED6;&#x7684;&#x811A;&#x672C;&#x3002;&#x8FD9;&#x662F;&#x9632;&#x6B62;&#x8FDD;&#x7EA6;&#x884C;&#x52A8;&#x7684;&#x6280;&#x5DE7;&#xFF1A;</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">&apos;a.no-link&apos;</span>).click(<span class="keyword">function</span> (e) {</div><div class="line">  e.preventDefault();</div><div class="line">});</div></pre></td></tr></table></figure>
+<h3 id="toggle-fade-slide"><a href="#toggle-fade-slide" class="headerlink" title="toggle fade/slide"></a>toggle fade/slide</h3><p>&#x6ED1;&#x52A8;&#x548C;&#x6DE1;&#x5165;/&#x6DE1;&#x51FA; &#x662F;&#x6211;&#x4EEC;&#x5728;jQuery&#x4E2D;&#x7ECF;&#x5E38;&#x5927;&#x91CF;&#x4F7F;&#x7528;&#x7684;&#x52A8;&#x753B;&#x3002;&#x4F60;&#x53EF;&#x80FD;&#x4EC5;&#x4EC5;&#x60F3;&#x5728;&#x7528;&#x6237;&#x505A;&#x67D0;&#x4E9B;&#x70B9;&#x51FB;&#x4E8B;&#x4EF6;&#x7684;&#x65F6;&#x5019;&#x663E;&#x793A;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#xFF0C;&#x8FD9;&#x65F6;&#x5019;&#x9700;&#x8981;&#x6DE1;&#x5165;/&#x6DE1;&#x51FA;&#x6216;&#x8005;&#x6ED1;&#x52A8;&#x65B9;&#x6CD5;&#x3002;&#x4F46;&#x662F;&#x5982;&#x679C;&#x4F60;&#x9700;&#x8981;&#x90A3;&#x4E2A;&#x5143;&#x7D20;&#x5728;&#x4F60;&#x7B2C;&#x4E00;&#x6B21;&#x70B9;&#x51FB;&#x7684;&#x65F6;&#x5019;&#x51FA;&#x73B0;&#xFF0C;&#x5728;&#x7B2C;&#x4E8C;&#x6B21;&#x70B9;&#x51FB;&#x7684;&#x65F6;&#x5019;&#x6D88;&#x5931;&#xFF0C;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">// Fade</div><div class="line">$(<span class="string">&apos;.btn&apos;</span>).click(<span class="function"><span class="title">function</span></span> () {</div><div class="line">  $(<span class="string">&apos;.element&apos;</span>).fadeToggle(<span class="string">&apos;slow&apos;</span>);</div><div class="line">});</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">// Toggle</div><div class="line">$(<span class="string">&apos;.btn&apos;</span>).click(<span class="function"><span class="title">function</span></span> () {</div><div class="line">  $(<span class="string">&apos;.element&apos;</span>).slideToggle(<span class="string">&apos;slow&apos;</span>);</div><div class="line">});</div></pre></td></tr></table></figure>
+<h3 id="&#x7B80;&#x5355;&#x7684;&#x624B;&#x98CE;&#x7434;"><a href="#&#x7B80;&#x5355;&#x7684;&#x624B;&#x98CE;&#x7434;" class="headerlink" title="&#x7B80;&#x5355;&#x7684;&#x624B;&#x98CE;&#x7434;"></a>&#x7B80;&#x5355;&#x7684;&#x624B;&#x98CE;&#x7434;</h3><p>&#x8FD9;&#x662F;&#x4E2A;&#x7B80;&#x5355;&#x5FEB;&#x901F;&#x7684;&#x65B9;&#x6CD5;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x624B;&#x98CE;&#x7434;&#xFF1A;</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">// Close all panels</div><div class="line">$(<span class="string">&apos;#accordion&apos;</span>).find(<span class="string">&apos;.content&apos;</span>).hide();</div><div class="line"></div><div class="line">// Accordion</div><div class="line">$(<span class="string">&apos;#accordion&apos;</span>).find(<span class="string">&apos;.accordion-header&apos;</span>).click(<span class="function"><span class="title">function</span></span> () {</div><div class="line">  var next = $(this).next();</div><div class="line">  next.slideToggle(<span class="string">&apos;fast&apos;</span>);</div><div class="line">  $(<span class="string">&apos;.content&apos;</span>).not(next).slideUp(<span class="string">&apos;fast&apos;</span>);</div><div class="line">  <span class="built_in">return</span> <span class="literal">false</span>;</div><div class="line">});</div></pre></td></tr></table></figure>
+<p>&#x901A;&#x8FC7;&#x6DFB;&#x52A0;&#x8FD9;&#x4E2A;&#x811A;&#x672C;&#xFF0C;&#x4F60;&#x9700;&#x8981;&#x505A;&#x7684;&#x5219;&#x662F;&#x5FC5;&#x8981;&#x7684;HTML&#x64CD;&#x4F5C;&#x5728;&#x4F60;&#x7684;&#x9875;&#x9762;&#x4E0A;&#x3002;</p>
+<h3 id="&#x4F7F;&#x4E24;&#x4E2A;DIV&#x540C;&#x7B49;&#x9AD8;&#x5EA6;"><a href="#&#x4F7F;&#x4E24;&#x4E2A;DIV&#x540C;&#x7B49;&#x9AD8;&#x5EA6;" class="headerlink" title="&#x4F7F;&#x4E24;&#x4E2A;DIV&#x540C;&#x7B49;&#x9AD8;&#x5EA6;"></a>&#x4F7F;&#x4E24;&#x4E2A;DIV&#x540C;&#x7B49;&#x9AD8;&#x5EA6;</h3><p>&#x6709;&#x65F6;&#x4F60;&#x4F1A;&#x60F3;&#x8981;&#x4E24;&#x4E2A;DIV&#x6709;&#x76F8;&#x540C;&#x7684;&#x9AD8;&#x5EA6;&#xFF0C;&#x65E0;&#x8BBA;&#x4ED6;&#x4EEC;&#x90FD;&#x6709;&#x4EC0;&#x4E48;&#x5185;&#x5BB9;&#xFF1A;</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">&apos;.div&apos;</span>).css(<span class="string">&apos;min-height&apos;</span>, $(<span class="string">&apos;.main-div&apos;</span>).height());</div></pre></td></tr></table></figure>
+<p>&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x8BBE;&#x7F6E;&#x4E86;DIV&#x7684;&#x6700;&#x5C0F;&#x9AD8;&#x5EA6;&#xFF0C;&#x8FD9;&#x610F;&#x5473;&#x7740;&#x5B83;&#x7684;&#x9AD8;&#x5EA6;&#x53EA;&#x53EF;&#x4EE5;&#x6BD4;&#x8FD9;&#x4E2A;&#x8BBE;&#x7F6E;&#x7684;&#x9AD8;&#x5EA6;&#x5927;&#x800C;&#x4E0D;&#x80FD;&#x5C0F;&#x3002;&#x7136;&#x800C;&#xFF0C;&#x4E00;&#x4E2A;&#x66F4;&#x7075;&#x6D3B;&#x7684;&#x65B9;&#x6CD5;&#x662F;&#x5FAA;&#x73AF;&#x7684;&#x4E00;&#x7EC4;&#x5143;&#x7D20;&#xFF0C;&#x5E76;&#x8BBE;&#x7F6E;&#x5C06;&#x6700;&#x9AD8;&#x5143;&#x7D20;&#x7684;&#x9AD8;&#x5EA6;&#x4F5C;&#x4E3A;&#x9AD8;&#x5EA6;&#xFF1A;</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">var <span class="variable">$columns</span> = $(<span class="string">&apos;.column&apos;</span>);</div><div class="line">var height = 0;</div><div class="line"><span class="variable">$columns</span>.each(<span class="function"><span class="title">function</span></span> () {</div><div class="line">  <span class="keyword">if</span> ($(this).height() &gt; height) {</div><div class="line">    height = $(this).height();</div><div class="line">  }</div><div class="line">});</div><div class="line"><span class="variable">$columns</span>.height(height);</div></pre></td></tr></table></figure>
+<p>&#x5982;&#x679C;&#x4F60;&#x60F3;&#x8981;&#x6240;&#x6709;&#x7684;&#x5217;&#x6709;&#x76F8;&#x540C;&#x7684;&#x9AD8;&#x5EA6;&#xFF1A;</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var <span class="variable">$rows</span> = $(<span class="string">&apos;.same-height-columns&apos;</span>);</div><div class="line"><span class="variable">$rows</span>.each(<span class="function"><span class="title">function</span></span> () {</div><div class="line">  $(this).find(<span class="string">&apos;.column&apos;</span>).height($(this).height());</div><div class="line">});</div></pre></td></tr></table></figure>
+<h3 id="&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x6807;&#x7B7E;-&#x65B0;&#x7A97;&#x53E3;&#x6253;&#x5F00;&#x5916;&#x90E8;&#x94FE;&#x63A5;"><a href="#&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x6807;&#x7B7E;-&#x65B0;&#x7A97;&#x53E3;&#x6253;&#x5F00;&#x5916;&#x90E8;&#x94FE;&#x63A5;" class="headerlink" title="&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x6807;&#x7B7E;/&#x65B0;&#x7A97;&#x53E3;&#x6253;&#x5F00;&#x5916;&#x90E8;&#x94FE;&#x63A5;"></a>&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x6807;&#x7B7E;/&#x65B0;&#x7A97;&#x53E3;&#x6253;&#x5F00;&#x5916;&#x90E8;&#x94FE;&#x63A5;</h3><p>&#x5728;&#x65B0;&#x7684;&#x6D4F;&#x89C8;&#x5668;&#x6807;&#x7B7E;&#x6216;&#x7A97;&#x53E3;&#x4E2D;&#x6253;&#x5F00;&#x5916;&#x90E8;&#x94FE;&#x63A5;&#xFF0C;&#x5E76;&#x786E;&#x4FDD;&#x5728;&#x540C;&#x4E00;&#x4E2A;&#x6807;&#x7B7E;&#x6216;&#x7A97;&#x53E3;&#x4E2D;&#x6253;&#x5F00;&#x7684;&#x662F;&#x540C;&#x4E00;&#x4E2A;&#x6E90;&#x7684;&#x94FE;&#x63A5;&#xFF1A;</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">&apos;a[href^=&quot;http&quot;]&apos;</span>).attr(<span class="string">&apos;target&apos;</span>, <span class="string">&apos;_blank&apos;</span>);</div><div class="line">$(<span class="string">&apos;a[href^=&quot;//&quot;]&apos;</span>).attr(<span class="string">&apos;target&apos;</span>, <span class="string">&apos;_blank&apos;</span>);</div><div class="line">$(<span class="string">&apos;a[href^=&quot;&apos;</span> + window.location.origin + <span class="string">&apos;&quot;]&apos;</span>).attr(<span class="string">&apos;target&apos;</span>, <span class="string">&apos;_self&apos;</span>);</div></pre></td></tr></table></figure>
+<p><strong>&#x5907;&#x6CE8;</strong> &#xFF1A;window.location.origin &#x5728;IE10&#x4E0D;&#x5DE5;&#x4F5C;&#x3002;</p>
+<h3 id="&#x6839;&#x636E;&#x6587;&#x672C;&#x83B7;&#x53D6;&#x5143;&#x7D20;"><a href="#&#x6839;&#x636E;&#x6587;&#x672C;&#x83B7;&#x53D6;&#x5143;&#x7D20;" class="headerlink" title="&#x6839;&#x636E;&#x6587;&#x672C;&#x83B7;&#x53D6;&#x5143;&#x7D20;"></a>&#x6839;&#x636E;&#x6587;&#x672C;&#x83B7;&#x53D6;&#x5143;&#x7D20;</h3><p>&#x901A;&#x8FC7;jQuery&#x4E2D;&#x7684;contains()&#x9009;&#x62E9;&#x5668;&#xFF0C;&#x4F60;&#x80FD;&#x627E;&#x5230;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x5185;&#x7684;&#x6587;&#x672C;&#x5185;&#x5BB9;&#x3002;&#x5982;&#x679C;&#x6587;&#x672C;&#x4E0D;&#x5B58;&#x5728;&#xFF0C;&#x5219;&#x8FD9;&#x4E2A;&#x5143;&#x7D20;&#x5C06;&#x88AB;&#x9690;&#x85CF;&#xFF1A;</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var search = $(<span class="string">&apos;#search&apos;</span>).val();</div><div class="line">$(<span class="string">&apos;div:not(:contains(&quot;&apos;</span> + search + <span class="string">&apos;&quot;))&apos;</span>).hide();</div></pre></td></tr></table></figure>
+<p>&#x53EF;&#x89C1;&#x53D8;&#x5316;&#x7684;&#x89E6;&#x53D1;</p>
+<p>&#x5F53;&#x7528;&#x6237;&#x4E0D;&#x518D;&#x805A;&#x7126;&#x6216;&#x8005;&#x91CD;&#x65B0;&#x805A;&#x7126;&#x4E00;&#x4E2A;&#x6807;&#x7B7E;&#x65F6;&#x89E6;&#x53D1;javascript&#x811A;&#x672C;&#xFF1A;</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$(document).on(<span class="string">&apos;visibilitychange&apos;</span>, <span class="keyword">function</span> (e) {</div><div class="line">  <span class="keyword">if</span> (e.target.visibilityState === <span class="string">&quot;visible&quot;</span>) {</div><div class="line">    console.log(<span class="string">&apos;Tab is now in view!&apos;</span>);</div><div class="line">  } <span class="keyword">else</span> <span class="keyword">if</span> (e.target.visibilityState === <span class="string">&quot;hidden&quot;</span>) {</div><div class="line">    console.log(<span class="string">&apos;Tab is now hidden!&apos;</span>);</div><div class="line">  }</div><div class="line">});</div></pre></td></tr></table></figure>
+<h3 id="Ajax&#x8C03;&#x7528;&#x9519;&#x8BEF;&#x5904;&#x7406;"><a href="#Ajax&#x8C03;&#x7528;&#x9519;&#x8BEF;&#x5904;&#x7406;" class="headerlink" title="Ajax&#x8C03;&#x7528;&#x9519;&#x8BEF;&#x5904;&#x7406;"></a>Ajax&#x8C03;&#x7528;&#x9519;&#x8BEF;&#x5904;&#x7406;</h3><p>&#x5F53;&#x4E00;&#x4E2A;Ajax&#x8C03;&#x7528;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;404&#x6216;500&#x7684;&#x9519;&#x8BEF;&#x65F6;&#xFF0C;&#x5C06;&#x6267;&#x884C;&#x8BE5;&#x9519;&#x8BEF;&#x5904;&#x7406;&#x3002;&#x5982;&#x679C;&#x8BE5;&#x5904;&#x7406;&#x672A;&#x5B9A;&#x4E49;&#xFF0C;&#x5219;&#x5176;&#x4ED6;jQuery&#x4EE3;&#x7801;&#x4FBF;&#x53EF;&#x80FD;&#x4E0D;&#x4F1A;&#x6267;&#x884C;&#x4E86;&#x3002;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x5168;&#x5C40;Ajax&#x9519;&#x8BEF;&#x5904;&#x7406;&#x7A0B;&#x5E8F;&#xFF1A;</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(document).ajaxError(<span class="keyword">function</span> (e, xhr, settings, error) {</div><div class="line">  console.log(error);</div><div class="line">});</div></pre></td></tr></table></figure>
+<h3 id="&#x94FE;&#x5F0F;&#x64CD;&#x4F5C;"><a href="#&#x94FE;&#x5F0F;&#x64CD;&#x4F5C;" class="headerlink" title="&#x94FE;&#x5F0F;&#x64CD;&#x4F5C;"></a>&#x94FE;&#x5F0F;&#x64CD;&#x4F5C;</h3><p>jQuery&#x5141;&#x8BB8;&#x901A;&#x8FC7;&#x94FE;&#x5F0F;&#x64CD;&#x4F5C;&#x6765;&#x51CF;&#x8F7B;&#x53CD;&#x590D;&#x67E5;&#x8BE2;DOM&#x548C;&#x521B;&#x5EFA;&#x591A;&#x4E2A;jQuery&#x5BF9;&#x8C61;&#x7684;&#x8FC7;&#x7A0B;&#x3002;&#x6BD4;&#x5982;&#x4E0B;&#x9762;&#x662F;&#x4F60;&#x7684;&#x65B9;&#x6CD5;&#x8C03;&#x7528;&#xFF1A;</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">&apos;#elem&apos;</span>).show();</div><div class="line">$(<span class="string">&apos;#elem&apos;</span>).html(<span class="string">&apos;bla&apos;</span>);</div><div class="line">$(<span class="string">&apos;#elem&apos;</span>).otherStuff();</div></pre></td></tr></table></figure>
+<p>&#x8FD9;&#x4EE3;&#x7801;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x94FE;&#x5F0F;&#x5927;&#x5927;&#x7684;&#x63D0;&#x9AD8;&#xFF1A;</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">&apos;#elem&apos;</span>)</div><div class="line">  .show()</div><div class="line">  .html(<span class="string">&apos;bla&apos;</span>)</div><div class="line">  .otherStuff();</div></pre></td></tr></table></figure>
+<p>&#x53E6;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;&#x662F;&#x5728;&#x4E00;&#x4E2A;&#x53EF;&#x53D8;&#x7684;&#x5143;&#x7D20;&#x7F13;&#x5B58;&#xFF08;$&#x4F5C;&#x4E3A;&#x524D;&#x7F6E;&#xFF09;&#xFF1A;</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var <span class="variable">$elem</span> = $(<span class="string">&apos;#elem&apos;</span>);</div><div class="line"><span class="variable">$elem</span>.hide();</div><div class="line"><span class="variable">$elem</span>.html(<span class="string">&apos;bla&apos;</span>);</div><div class="line"><span class="variable">$elem</span>.otherStuff();</div></pre></td></tr></table></figure>
+<p>&#x94FE;&#x5F0F;&#x548C;jQuery&#x7F13;&#x5B58;&#x65B9;&#x6CD5;&#x662F;&#x6700;&#x597D;&#x7684;&#x505A;&#x6CD5;&#xFF0C;&#x5BFC;&#x81F4;&#x66F4;&#x77ED;&#x3001;&#x66F4;&#x5FEB;&#x7684;&#x4EE3;&#x7801;&#x3002;</p>
+<p>&#x7FFB;&#x8BD1;&#xFF1A;&#x91CE;&#x517D;</p>
+<p>&#x539F;&#x6587;&#x5730;&#x5740;&#xFF1A;<a href="https://github.com/AllThingsSmitty/jquery-tips-everyone-should-know" target="_blank" rel="external">https://github.com/AllThingsSmitty/jquery-tips-everyone-should-know&#x3002;</a></p>
+<p>&#x4F5C;&#x8005;&#xFF1A;&#x7834;  &#x72FC;<br>&#x51FA;&#x5904;&#xFF1A;<a href="http://www.cnblogs.com/whitewolf/" target="_blank" rel="external">http://www.cnblogs.com/whitewolf/ </a><br>&#x672C;&#x6587;&#x7248;&#x6743;&#x5F52;&#x4F5C;&#x8005;&#xFF0C;&#x6B22;&#x8FCE;&#x8F6C;&#x8F7D;&#xFF0C;&#x4F46;&#x672A;&#x7ECF;&#x4F5C;&#x8005;&#x540C;&#x610F;&#x5FC5;&#x987B;&#x4FDD;&#x7559;&#x6B64;&#x6BB5;&#x58F0;&#x660E;&#xFF0C;&#x4E14;&#x5728;&#x6587;&#x7AE0;&#x9875;&#x9762;&#x660E;&#x663E;&#x4F4D;&#x7F6E;&#x7ED9;&#x51FA;&#x539F;&#x6587;&#x8FDE;&#x63A5;&#xFF0C;&#x5426;&#x5219;&#x4FDD;&#x7559;&#x8FFD;&#x7A76;&#x6CD5;&#x5F8B;&#x8D23;&#x4EFB;&#x7684;&#x6743;&#x5229;&#x3002;</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/08/17/优化AngularJS：1200毫秒到35毫秒的蜕变/" itemprop="url">
                   优化AngularJS：1200毫秒到35毫秒的蜕变
                 </a>
@@ -724,7 +900,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-count">4</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -732,7 +908,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -741,7 +917,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
